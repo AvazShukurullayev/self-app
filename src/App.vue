@@ -7,7 +7,7 @@
           <SearchInput />
           <FilterButtons />
         </MyBox>
-        <MovieList />
+        <MovieList :movies="movies" />
         <MovieAddForm />
       </div>
     </div>
@@ -32,7 +32,52 @@ export default {
     MovieAddForm,
   },
   data() {
-    return {};
+    return {
+      movies: [
+        {
+          title: "Omar",
+          viewers: 894,
+          favourite: false,
+          like: false,
+          id: 1,
+        },
+        {
+          title: "Empire of Osman",
+          viewers: 1145,
+          favourite: false,
+          like: false,
+          id: 2,
+        },
+        {
+          title: "Ertugrul",
+          viewers: 714,
+          favourite: false,
+          like: false,
+          id: 3,
+        },
+        {
+          title: "Abdulhamid II",
+          viewers: 1748,
+          favourite: false,
+          like: false,
+          id: 4,
+        },
+        {
+          title: "Empire of Mog'ul",
+          viewers: 455,
+          favourite: false,
+          like: false,
+          id: 5,
+        },
+        {
+          title: "Murad IV. Bagdad Fatihi",
+          viewers: 314,
+          favourite: false,
+          like: false,
+          id: 6,
+        },
+      ],
+    };
   },
   methods: {},
 };

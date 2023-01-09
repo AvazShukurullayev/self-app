@@ -1,10 +1,13 @@
 <template>
-  <input type="text" class="form-control" />
+  <li>
+    <slot></slot>
+  </li>
 </template>
 
 <script>
 export default {
-  name: "MyInput",
+  name: "MovieListItem",
+  props: ["movie"],
 };
 </script>
 
