@@ -4,11 +4,11 @@
       <div class="content">
         <AppInfo />
         <MyBox class="search-panel">
-          <h2>Search Input</h2>
-          <h2>Filter buttons</h2>
+          <SearchInput />
+          <FilterButtons />
         </MyBox>
-        <h2>Movie list</h2>
-        <h2>Movie add form</h2>
+        <MovieList />
+        <MovieAddForm />
       </div>
     </div>
   </div>
@@ -17,9 +17,20 @@
 <script>
 import AppInfo from "./components/app-info/AppInfo.vue";
 import MyBox from "@/components/ui-components/MyBox.vue";
+import SearchInput from "./components/search-input/SearchInput.vue";
+import FilterButtons from "./components/filter-buttons/FilterButtons.vue";
+import MovieList from "./components/movie-list/MovieList.vue";
+import MovieAddForm from "./components/movie-add-form/MovieAddForm.vue";
 export default {
   name: "App",
-  components: { AppInfo, MyBox },
+  components: {
+    AppInfo,
+    MyBox,
+    SearchInput,
+    FilterButtons,
+    MovieList,
+    MovieAddForm,
+  },
   data() {
     return {};
   },
