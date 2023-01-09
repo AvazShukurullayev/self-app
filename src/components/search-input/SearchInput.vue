@@ -1,15 +1,21 @@
 <template>
-  <MyInput />
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Kinolarni qidirish..."
+    v-model="searching"
+  />
 </template>
 
 <script>
-import MyInput from "../ui-components/MyInput.vue";
 export default {
   name: "SearchInput",
-  components: { MyInput },
+  components: {},
   props: {},
   data() {
-    return {};
+    return {
+      searching: "",
+    };
   },
   methods: {},
 };

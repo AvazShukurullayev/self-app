@@ -1,8 +1,11 @@
 <template>
-  <div class="btn-goup">
-    <MyButton>Barcha kinolar</MyButton>
-    <MyButton>Mashxur kinolar</MyButton>
-    <MyButton>Eng ko'p ko'rilgan kinolar</MyButton>
+  <div class="btn-goup mt-3">
+    <MyButton 
+    v-for="filterBtn in filterButtons"
+    class="btn-outline-dark"
+    >
+      {{ filterBtn.title }}
+    </MyButton>
   </div>
 </template>
 
@@ -13,7 +16,22 @@ export default {
   components: { MyButton },
   props: {},
   data() {
-    return {};
+    return {
+      filterButtons: [
+        {
+          title: "Barcha kinolar",
+          valueOfBtn: "all",
+        },
+        {
+          title: "Mashhur kinolar",
+          valueOfBtn: "popular",
+        },
+        {
+          title: "En ko'p ko'rilgan kinolar",
+          valueOfBtn: "mostViewers",
+        },
+      ],
+    };
   },
   methods: {},
 };

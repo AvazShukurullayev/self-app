@@ -1,7 +1,7 @@
 <template>
   <MyBox>
     <h3 class="movie-add-form__title">Kinolar qo'shish</h3>
-    <form class="d-flex" @submit.prevent="onSubmitMovieAddForm(form)">
+    <form class="d-flex" @submit.prevent="onSubmitMovieAddForm">
       <input
         class="form-control"
         type="text"
@@ -23,11 +23,10 @@
 
 <script>
 import MyBox from "@/components/ui-components/MyBox.vue";
-import MyInput from "@/components/ui-components/MyInput.vue";
 import MyButton from "@/components/ui-components/MyButton.vue";
 export default {
   name: "MovieAddForm",
-  components: { MyBox, MyInput, MyButton },
+  components: { MyBox, MyButton },
   props: {},
   data() {
     return {
@@ -35,10 +34,9 @@ export default {
     };
   },
   methods: {
-    onSubmitMovieAddForm(par) {
+    onSubmitMovieAddForm() {
       console.log(this.form.title);
       console.log(this.form.viewers);
-      console.log("par=>", par);
     },
   },
 };

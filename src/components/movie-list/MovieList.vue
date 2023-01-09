@@ -9,15 +9,15 @@
       >
         <span class="movie-list-item-label">{{ movie.title }}</span>
         <div class="movie-list-item-content d-flex align-items-center">
-          <MyInput
+          <input
             type="number"
-            class="movie-list-item-input text-center"
+            class="movie-list-item-input form-control text-center"
             :value="movie.viewers"
           />
-          <MyButton class="btn-cookie btn-sm">
+          <MyButton class="btn-cookie btn-sm" @click="onFavourite">
             <i class="fas fa-cookie"></i>
           </MyButton>
-          <MyButton class="btn-trash btn-sm">
+          <MyButton class="btn-trash btn-sm" @click="onRemove(movie.id)">
             <i class="fas fa-trash"></i>
           </MyButton>
           <i class="fas fa-star"></i>
@@ -29,16 +29,22 @@
 
 <script>
 import MyBox from "@/components/ui-components/MyBox.vue";
-import MyInput from "@/components/ui-components/MyInput.vue";
 import MyButton from "@/components/ui-components/MyButton.vue";
 export default {
   name: "MovieList",
-  components: { MyBox, MyInput, MyButton },
+  components: { MyBox, MyButton },
   props: ["movies"],
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    onFavourite() {
+      console.log("onFavourite");
+    },
+    onRemove() {
+      console.log("onRemove");
+    },
+  },
 };
 </script>
 

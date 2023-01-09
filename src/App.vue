@@ -2,7 +2,10 @@
   <div id="app">
     <div class="container font-monospace py-3">
       <div class="content">
-        <AppInfo />
+        <AppInfo
+          :moviesLength="movies.filter((c) => c).length"
+          :moviesFavouriteLength="movies.filter((c) => c.favourite).length"
+        />
         <MyBox class="search-panel">
           <SearchInput />
           <FilterButtons />
@@ -38,13 +41,13 @@ export default {
           title: "Omar",
           viewers: 894,
           favourite: false,
-          like: false,
+          like: true,
           id: 1,
         },
         {
           title: "Empire of Osman",
           viewers: 1145,
-          favourite: false,
+          favourite: true,
           like: false,
           id: 2,
         },
@@ -58,7 +61,7 @@ export default {
         {
           title: "Abdulhamid II",
           viewers: 1748,
-          favourite: false,
+          favourite: true,
           like: false,
           id: 4,
         },
