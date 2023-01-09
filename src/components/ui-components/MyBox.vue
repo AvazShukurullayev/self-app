@@ -12,10 +12,10 @@ export default {
 
 <style>
 .box {
-  margin: 1rem 0;
-  padding: 1rem;
-  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.15);
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
   border-radius: 6px;
-  background-color: #f8f8f8c2;
+  background-color: #fffafaef;
 }
 </style>
