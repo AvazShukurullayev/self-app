@@ -1,8 +1,11 @@
 <template>
   <div class="btn-goup mt-3">
-    <MyButton 
-    v-for="filterBtn in filterButtons"
-    class="btn-outline-dark"
+    <MyButton
+      v-for="filterBtn in filterButtons"
+      @click="onFilterClick(filterBtn.valueOfBtn)"
+      :class="[
+        filter == filterBtn.valueOfBtn ? 'btn-dark' : 'btn-outline-dark',
+      ]"
     >
       {{ filterBtn.title }}
     </MyButton>
@@ -27,13 +30,18 @@ export default {
           valueOfBtn: "popular",
         },
         {
-          title: "En ko'p ko'rilgan kinolar",
+          title: "Eng ko'p ko'rilgan kinolar",
           valueOfBtn: "mostViewers",
         },
       ],
+      filter: "all",
     };
   },
-  methods: {},
+  methods: {
+    onFilterClick(par) {
+      this.filter = par;
+    },
+  },
 };
 </script>
 

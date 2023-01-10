@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import AppInfo from "./components/app-info/AppInfo.vue";
+import AppInfo from "@/components/app-info/AppInfo.vue";
 import MyBox from "@/components/ui-components/MyBox.vue";
-import SearchInput from "./components/search-input/SearchInput.vue";
-import FilterButtons from "./components/filter-buttons/FilterButtons.vue";
-import MovieList from "./components/movie-list/MovieList.vue";
-import MovieAddForm from "./components/movie-add-form/MovieAddForm.vue";
+import SearchInput from "@/components/search-input/SearchInput.vue";
+import FilterButtons from "@/components/filter-buttons/FilterButtons.vue";
+import MovieList from "@/components/movie-list/MovieList.vue";
+import MovieAddForm from "@/components/movie-add-form/MovieAddForm.vue";
 export default {
   name: "App",
   components: {

@@ -18,6 +18,9 @@ export default {
     };
   },
   methods: {},
+ /*  updated() {
+    console.log("this.searching => ", this.searching);
+  }, */
 };
 </script>
 
