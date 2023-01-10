@@ -3,7 +3,7 @@
     <div class="container font-monospace py-3">
       <div class="content">
         <AppInfo
-          :moviesLength="movies.filter((c) => c).length"
+          :allMoviesLength="movies.length"
           :moviesFavouriteLength="movies.filter((c) => c.favourite).length"
         />
         <MyBox class="search-panel">
@@ -11,7 +11,7 @@
           <FilterButtons />
         </MyBox>
         <MovieList :movies="movies" />
-        <MovieAddForm />
+        <MovieAddForm @movieAddItem="movieAddItem" />
       </div>
     </div>
   </div>
@@ -41,13 +41,13 @@ export default {
           title: "Omar",
           viewers: 894,
           favourite: false,
-          like: true,
+          like: false,
           id: 1,
         },
         {
           title: "Empire of Osman",
           viewers: 1145,
-          favourite: true,
+          favourite: false,
           like: false,
           id: 2,
         },
@@ -61,7 +61,7 @@ export default {
         {
           title: "Abdulhamid II",
           viewers: 1748,
-          favourite: true,
+          favourite: false,
           like: false,
           id: 4,
         },
@@ -82,7 +82,11 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    movieAddItem(par) {
+      this.movies.push(par);
+    },
+  },
 };
 </script>
 

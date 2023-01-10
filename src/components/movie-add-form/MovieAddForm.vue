@@ -35,8 +35,19 @@ export default {
   },
   methods: {
     onSubmitMovieAddForm() {
-      console.log(this.form.title);
       console.log(this.form.viewers);
+      if (this.form.title !== "" && this.form.viewers !== "") {
+        const newMovieItem = {
+          title: this.form.title,
+          viewers: this.form.viewers,
+          favourite: false,
+          like: false,
+          id: Date.now(),
+        };
+        this.$emit("movieAddItem", newMovieItem);
+      } else {
+        return alert("Movie-add-form da xatolik bor");
+      }
     },
   },
 };

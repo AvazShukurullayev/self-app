@@ -5,7 +5,6 @@
         v-for="movie in movies"
         :key="movie.id"
         :movie="movie"
-        class="list-group-item d-flex align-items-center justify-content-between"
         :class="{ like: movie.like, favourite: movie.favourite }"
       />
     </ul>

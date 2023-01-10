@@ -1,5 +1,7 @@
 <template>
-  <li class="movie-list-item">
+  <li
+    class="movie-list-item list-group-item d-flex align-items-center justify-content-between"
+  >
     <span class="movie-list-item-label">{{ movie.title }}</span>
     <div class="movie-list-item-content d-flex align-items-center">
       <input
@@ -40,6 +42,8 @@ export default {
   margin: 3px 5px;
   width: 35px;
   height: 35px;
+  border: none;
+  outline: none;
 }
 .btn-cookie {
   color: orange;

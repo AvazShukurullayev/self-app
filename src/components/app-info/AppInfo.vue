@@ -1,6 +1,6 @@
 <template>
   <MyBox class="app-info">
-    <MyParag class="fs-3">Barcha kinolar soni: {{ moviesLength }}</MyParag>
+    <MyParag class="fs-3">Barcha kinolar soni: {{ allMoviesLength }}</MyParag>
     <MyParag class="fs-4"
       >Favourite kinolar soni: {{ moviesFavouriteLength }}</MyParag
     >
@@ -13,7 +13,7 @@ import MyParag from "@/components/ui-components/MyParag.vue";
 export default {
   name: "AppInfo",
   components: { MyBox, MyParag },
-  props: ["moviesLength", "moviesFavouriteLength"],
+  props: ["allMoviesLength", "moviesFavouriteLength"],
   data() {
     return {};
   },
