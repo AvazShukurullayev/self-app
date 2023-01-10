@@ -9,10 +9,12 @@
         />
         <MyBox class="search-panel">
           <SearchInput @onSearch="onSearchApp" />
-          <FilterButtons />
+          <FilterButtons @onFilterButton="onFilterButton" />
         </MyBox>
         <MovieList
-          :movies="onSearchMovies(movies, searchFromList)"
+          :movies="
+            onFilterButton(onSearchMovies(movies, searchFromList), filterBtn)
+          "
           @onLike="onLikeApp"
           @onFavourite="onFavouriteApp"
           @onRemove="onRemoveApp"
@@ -87,9 +89,13 @@ export default {
         },
       ],
       searchFromList: "",
+      filterBtn: "all",
     };
   },
   methods: {
+    onFilterButton(param) {
+      this.filterBtn = param;
+    },
     onSearchApp(param) {
       this.searchFromList = param;
     },

@@ -14,7 +14,6 @@ export default {
   props: {},
   data() {
     return {
-      // searching: "",
     };
   },
   methods: {},

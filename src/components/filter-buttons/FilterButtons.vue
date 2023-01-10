@@ -40,6 +40,7 @@ export default {
   methods: {
     onFilterClick(par) {
       this.filter = par;
+      this.$emit("onFilterButton", this.filter);
     },
   },
 };
