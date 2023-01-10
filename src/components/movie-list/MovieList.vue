@@ -1,38 +1,24 @@
 <template>
   <MyBox>
     <ul class="list-group">
-      <li
+      <MovieListItem
         v-for="movie in movies"
-        class="movie-list-item list-group-item d-flex align-items-center justify-content-between"
-        :class="{ like: movie.like, favourite: movie.favourite }"
         :key="movie.id"
-      >
-        <span class="movie-list-item-label">{{ movie.title }}</span>
-        <div class="movie-list-item-content d-flex align-items-center">
-          <input
-            type="number"
-            class="movie-list-item-input form-control text-center"
-            :value="movie.viewers"
-          />
-          <MyButton class="btn-cookie btn-sm" @click="onFavourite">
-            <i class="fas fa-cookie"></i>
-          </MyButton>
-          <MyButton class="btn-trash btn-sm" @click="onRemove(movie.id)">
-            <i class="fas fa-trash"></i>
-          </MyButton>
-          <i class="fas fa-star"></i>
-        </div>
-      </li>
+        :movie="movie"
+        class="list-group-item d-flex align-items-center justify-content-between"
+        :class="{ like: movie.like, favourite: movie.favourite }"
+      />
     </ul>
   </MyBox>
 </template>
 
 <script>
 import MyBox from "@/components/ui-components/MyBox.vue";
-import MyButton from "@/components/ui-components/MyButton.vue";
+
+import MovieListItem from "../movie-list-item/MovieListItem.vue";
 export default {
   name: "MovieList",
-  components: { MyBox, MyButton },
+  components: { MyBox, MovieListItem },
   props: ["movies"],
   data() {
     return {};
@@ -48,48 +34,4 @@ export default {
 };
 </script>
 
-<style>
-.movie-list-item-label {
-  font-size: 20px;
-  padding: 5px 0;
-  max-width: 550px;
-  width: 100%;
-  cursor: pointer;
-}
-.btn-cookie,
-.btn-trash {
-  background-color: #e9e7e7;
-  margin: 3px 5px;
-  width: 35px;
-  height: 35px;
-}
-.btn-cookie {
-  color: orange;
-}
-.btn-cookie:hover {
-  color: orange;
-  background-color: #b6b6b69a;
-}
-.btn-trash {
-  color: orangered;
-}
-.btn-trash:hover {
-  color: orangered;
-  background-color: #b6b6b69a;
-}
-.fa-star {
-  width: 40px;
-  color: gold;
-  opacity: 0;
-  transform: translateX(20px);
-  transition: all 0.3s;
-}
-.movie-list-item.like .fa-star {
-  opacity: 1;
-  transform: translateX(0);
-}
-.movie-list-item.favourite .movie-list-item-label,
-.movie-list-item.favourite .movie-list-item-input {
-  color: gold;
-}
-</style>
+<style></style>
