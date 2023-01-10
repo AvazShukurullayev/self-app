@@ -1,20 +1,20 @@
 <template>
   <MyBox>
-    <h3 class="movie-add-form__title">Kinolar qo'shish</h3>
+    <h3 class="movie-add-form__title">Kino qo'shish</h3>
     <form class="d-flex" @submit.prevent="onSubmitMovieAddForm">
       <input
         class="form-control"
         type="text"
         placeholder="Kinoning nomi?"
-        required
         v-model="form.title"
+        required
       />
       <input
         class="form-control"
         type="number"
         placeholder="Necha marotaba ko'rilgan?"
-        required
         v-model="form.viewers"
+        required
       />
       <MyButton class="btn-outline-dark" type="submit">Qo'shish</MyButton>
     </form>

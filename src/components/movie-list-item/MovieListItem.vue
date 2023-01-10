@@ -2,17 +2,19 @@
   <li
     class="movie-list-item list-group-item d-flex align-items-center justify-content-between"
   >
-    <span class="movie-list-item-label">{{ movie.title }}</span>
+    <span class="movie-list-item-label" @click="$emit('onLike', movie.id)">
+      {{ movie.title }}
+    </span>
     <div class="movie-list-item-content d-flex align-items-center">
       <input
         type="number"
         class="movie-list-item-input form-control text-center"
         :value="movie.viewers"
       />
-      <button class="btn-cookie btn-sm">
+      <button class="btn-cookie btn-sm" @click="$emit('onFavourite', movie.id)">
         <i class="fas fa-cookie"></i>
       </button>
-      <button class="btn-trash btn-sm">
+      <button class="btn-trash btn-sm" @click="$emit('onRemove', movie.id)">
         <i class="fas fa-trash"></i>
       </button>
       <i class="fas fa-star"></i>
@@ -25,6 +27,10 @@ export default {
   name: "MovieListItem",
   props: ["movie"],
   comments: {},
+  data() {
+    return {};
+  },
+  methods: {},
 };
 </script>
 

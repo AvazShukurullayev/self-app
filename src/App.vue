@@ -5,12 +5,18 @@
         <AppInfo
           :allMoviesLength="movies.length"
           :moviesFavouriteLength="movies.filter((c) => c.favourite).length"
+          :moviesLikedLength="movies.filter((c) => c.like).length"
         />
         <MyBox class="search-panel">
           <SearchInput />
           <FilterButtons />
         </MyBox>
-        <MovieList :movies="movies" />
+        <MovieList
+          :movies="movies"
+          @onLike="onLikeApp"
+          @onFavourite="onFavouriteApp"
+          @onRemove="onRemoveApp"
+        />
         <MovieAddForm @movieAddItem="movieAddItem" />
       </div>
     </div>
@@ -83,8 +89,27 @@ export default {
     };
   },
   methods: {
-    movieAddItem(par) {
-      this.movies.push(par);
+    movieAddItem(param) {
+      this.movies.push(param);
+    },
+    onLikeApp(id) {
+      this.movies = this.movies.map((element) => {
+        if (element.id === id) {
+          element.like = !element.like;
+        }
+        return element;
+      });
+    },
+    onFavouriteApp(id) {
+      this.movies = this.movies.map((element) => {
+        if (element.id === id) {
+          element.favourite = !element.favourite;
+        }
+        return element;
+      });
+    },
+    onRemoveApp(id) {
+      this.movies = this.movies.filter((c) => c.id !== id);
     },
   },
 };

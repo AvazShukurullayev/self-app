@@ -6,6 +6,9 @@
         :key="movie.id"
         :movie="movie"
         :class="{ like: movie.like, favourite: movie.favourite }"
+        @onLike="$emit('onLike', $event)"
+        @onFavourite="$emit('onFavourite', $event)"
+        @onRemove="$emit('onRemove', $event)"
       />
     </ul>
   </MyBox>
@@ -13,8 +16,7 @@
 
 <script>
 import MyBox from "@/components/ui-components/MyBox.vue";
-
-import MovieListItem from "../movie-list-item/MovieListItem.vue";
+import MovieListItem from "@/components/movie-list-item/MovieListItem.vue";
 export default {
   name: "MovieList",
   components: { MyBox, MovieListItem },
