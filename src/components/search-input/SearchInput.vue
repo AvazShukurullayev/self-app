@@ -1,10 +1,10 @@
 <template>
-  <input
-    type="text"
-    class="form-control"
-    placeholder="Kinolarni qidirish..."
-    v-model="searching"
-  />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Kinolarni qidirish..."
+      @input="$emit('onSearch', $event.target.value)"
+    />
 </template>
 
 <script>
@@ -14,13 +14,10 @@ export default {
   props: {},
   data() {
     return {
-      searching: "",
+      // searching: "",
     };
   },
   methods: {},
- /*  updated() {
-    console.log("this.searching => ", this.searching);
-  }, */
 };
 </script>
 

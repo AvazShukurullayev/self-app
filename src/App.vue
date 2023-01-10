@@ -8,11 +8,11 @@
           :moviesLikedLength="movies.filter((c) => c.like).length"
         />
         <MyBox class="search-panel">
-          <SearchInput />
+          <SearchInput @onSearch="onSearchApp" />
           <FilterButtons />
         </MyBox>
         <MovieList
-          :movies="movies"
+          :movies="onSearchMovies(movies, searchFromList)"
           @onLike="onLikeApp"
           @onFavourite="onFavouriteApp"
           @onRemove="onRemoveApp"
@@ -86,9 +86,21 @@ export default {
           id: 6,
         },
       ],
+      searchFromList: "",
     };
   },
   methods: {
+    onSearchApp(param) {
+      this.searchFromList = param;
+    },
+    onSearchMovies(arr, param) {
+      if (param.length == 0) {
+        return arr;
+      }
+      return (arr = this.movies.filter((c) =>
+        c.title.toLowerCase().includes(this.searchFromList.toLowerCase())
+      ));
+    },
     movieAddItem(param) {
       this.movies.push(param);
     },
