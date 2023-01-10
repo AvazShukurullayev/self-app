@@ -13,7 +13,7 @@
         </MyBox>
         <MovieList
           :movies="
-            onFilterButton(onSearchMovies(movies, searchFromList), filterBtn)
+            onFilterHandler(onSearchMovies(movies, searchFromList), filterBtn)
           "
           @onLike="onLikeApp"
           @onFavourite="onFavouriteApp"
@@ -93,6 +93,16 @@ export default {
     };
   },
   methods: {
+    onFilterHandler(arr, param) {
+      switch (param) {
+        case "popular":
+          return arr.filter((c) => c.like);
+        case "mostViewers":
+          return arr.filter((c) => c.viewers > 500);
+        default:
+          return arr;
+      }
+    },
     onFilterButton(param) {
       this.filterBtn = param;
     },
