@@ -96,7 +96,7 @@ export default {
     onFilterHandler(arr, param) {
       switch (param) {
         case "popular":
-          return arr.filter((c) => c.like);
+          return arr.filter((c) => c.favourite);
         case "mostViewers":
           return arr.filter((c) => c.viewers > 500);
         default:

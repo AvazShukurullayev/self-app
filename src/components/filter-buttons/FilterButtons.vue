@@ -2,6 +2,7 @@
   <div class="btn-goup mt-3">
     <MyButton
       v-for="filterBtn in filterButtons"
+      :key="filterBtn.title"
       @click="onFilterClick(filterBtn.valueOfBtn)"
       :class="[
         filter == filterBtn.valueOfBtn ? 'btn-dark' : 'btn-outline-dark',
