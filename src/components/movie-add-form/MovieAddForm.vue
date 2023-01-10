@@ -35,7 +35,6 @@ export default {
   },
   methods: {
     onSubmitMovieAddForm() {
-      console.log(this.form.viewers);
       if (this.form.title !== "" && this.form.viewers !== "") {
         const newMovieItem = {
           title: this.form.title,
@@ -45,6 +44,7 @@ export default {
           id: Date.now(),
         };
         this.$emit("movieAddItem", newMovieItem);
+        this.form = {};
       } else {
         return alert("Movie-add-form da xatolik bor");
       }
